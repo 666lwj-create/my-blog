@@ -1,0 +1,41 @@
+/* --- 1. 字体优化：让文字显示更清晰，像系统原生的一样 --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+/* --- 2. 圆角优化：把尖锐的直角磨圆，看起来更温润 --- */
+:root {
+    --card-border-radius: 16px; /* 卡片圆角 */
+}
+
+/* --- 3. 滚动条美化：把浏览器默认那个又粗又丑的滚动条藏起来，变成细条 --- */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* --- 4. 鼠标悬停微交互：稍微动一点点，不发热 --- */
+/* 当鼠标移到文章卡片上时，轻轻上浮 3像素，不搞大动作 */
+.article-list--compact article {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.article-list--compact article:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05); /* 淡淡的阴影 */
+}
+
+/* --- 5. 个人卡片背景微调 --- */
+/* 给左边的个人简介栏加一点点非常淡的背景色，区分层次 */
+.sidebar header {
+    background-color: rgba(0, 0, 0, 0.02); /* 极淡的灰色 */
+    border-radius: var(--card-border-radius);
+    padding: 20px;
+    margin-bottom: 20px;
+}
