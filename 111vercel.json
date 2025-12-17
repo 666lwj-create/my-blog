@@ -1,6 +1,0 @@
-{
-  "framework": "hugo",
-  "buildCommand": "hugo --gc --minify",
-  "outputDirectory": "public",
-  "installCommand": "yum install -y golang && hugo version"
-}
